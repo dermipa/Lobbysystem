@@ -24,7 +24,7 @@ public final class mipa extends JavaPlugin {
         pm.registerEvents(new CompasListener(), this);
         
         ConsoleCommandSender console = Bukkit.getConsoleSender();
-        console.sendMessage(ChatColor.DARK_GREEN + "Addon erfolgreich geladen!");
+        console.sendMessage(ChatColor.DARK_GREEN + "Lobbysystem erfolgreich geladen!");
 
         }
 

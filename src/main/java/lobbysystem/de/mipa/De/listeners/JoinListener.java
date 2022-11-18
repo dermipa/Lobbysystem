@@ -23,7 +23,7 @@ public class JoinListener implements Listener {
         Player player = event.getPlayer();
 
         player.setHealthScale(6);
-        player.setHealth(20);
+        player.setHealth(6);
         player.setFoodLevel(20);
         player.setSaturation(20);
         player.setLevel(2022);
