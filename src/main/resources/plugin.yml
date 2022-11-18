@@ -1,0 +1,4 @@
+name: LobbySystem
+version: '${project.version}'
+main: lobbysystem.de.mipa.De.mipa
+api-version: 1.18
