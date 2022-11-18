@@ -1,11 +1,14 @@
 package lobbysystem.de.mipa.De.listeners;
 
 import lobbysystem.de.mipa.De.Util.ItemBuilder;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.ChatColor;
 
@@ -19,6 +22,13 @@ public class JoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
 
+        player.setHealthScale(6);
+        player.setHealth(20);
+        player.setFoodLevel(20);
+        player.setSaturation(20);
+        player.setLevel(2022);
+
+        player.teleport(new Location(Bukkit.getWorld("lobbymap"),0.6507218913343231,51.0,0.19942964994776144));
 
         player.getInventory().clear();
         player.getInventory().setItem(0,navigator);
@@ -26,8 +36,13 @@ public class JoinListener implements Listener {
         player.getScoreboard().getPlayerTeam(player).getPrefix()+ChatColor.DARK_GRAY
         +player.getName()+ChatColor.DARK_GREEN +", auf unserem Server! Schaue auf CityBuild vorbei! ");
 
-        event.setJoinMessage(" ");
+        event.setJoinMessage("");
 
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent event){
+        event.setQuitMessage("");
     }
 
 }

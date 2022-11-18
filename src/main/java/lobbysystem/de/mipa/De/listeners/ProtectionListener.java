@@ -1,6 +1,7 @@
 package lobbysystem.de.mipa.De.listeners;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -50,21 +51,25 @@ public class ProtectionListener implements Listener {
                     switch (event.getCurrentItem().getItemMeta().getLocalizedName()) {
                             case "navigator.citybuild":
                             Location location = new Location(Bukkit.getWorld("lobbymap"),0.4042113307408788,50,34.818419695838145);
-                                player.teleport(location);
-                              break;
+                            location.setYaw(-0.0013875067f);
+                            location.setPitch( 2.750691f);
+                            player.teleport(location);
+                            break;
                             case "navigator.survival":
-                                Location location2 = new Location(Bukkit.getWorld("lobbymap"),0.5779243100204949,50,-33.40396268936656);
-                                player.teleport(location2);
+                                location = new Location(Bukkit.getWorld("lobbymap"),0.5779243100204949,50,-33.40396268936656);
+                                location.setYaw(-181.95004f);
+                                location.setPitch(3.9511695f);
+                                player.teleport(location);
                                 break;
                         case "navigator.spawn":
-                                Location location3 = new Location(Bukkit.getWorld("lobbymap"),0.6507218913343231,51,0.19942964994776144);
-                                player.teleport(location3);
+                                location = new Location(Bukkit.getWorld("lobbymap"),0.6507218913343231,51,0.19942964994776144);
+                                player.teleport(location);
                                 break;
                         case "navigator.arbeit":
-                            player.sendMessage("§4Dieser Server ist in Arbeit!");
+                            player.sendMessage(ChatColor.DARK_RED +"Dieser Server ist in Arbeit!");
                             break;
                         case "navigator.arbeit2":
-                            player.sendMessage("§4Dieser Server ist in Arbeit!");
+                            player.sendMessage(ChatColor.DARK_RED+"Dieser Server ist in Arbeit!");
                             break;
 
 

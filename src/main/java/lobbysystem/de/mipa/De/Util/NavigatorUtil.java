@@ -21,6 +21,7 @@ public class NavigatorUtil {
 
 
 
+
         player.openInventory(inventory);
 
     }
