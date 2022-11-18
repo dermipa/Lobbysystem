@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
@@ -78,4 +79,10 @@ public class ProtectionListener implements Listener {
                     }}}}
 
          }
+
+    @EventHandler
+    public void onPlayerHunger(FoodLevelChangeEvent event){
+            event.setCancelled(true);
+    }
+
 }
