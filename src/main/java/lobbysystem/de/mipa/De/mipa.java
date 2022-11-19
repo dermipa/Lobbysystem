@@ -1,6 +1,7 @@
 package lobbysystem.de.mipa.De;
 
 
+import lobbysystem.de.mipa.De.Commands.shopC;
 import lobbysystem.de.mipa.De.listeners.CompasListener;
 import lobbysystem.de.mipa.De.listeners.JoinListener;
 import lobbysystem.de.mipa.De.listeners.ProtectionListener;
@@ -19,6 +20,7 @@ public final class mipa extends JavaPlugin {
         pm.registerEvents(new JoinListener(),this);
         pm.registerEvents(new ProtectionListener(),this);
         pm.registerEvents(new CompasListener(), this);
+        getCommand("shop").setExecutor(new shopC());
         
         ConsoleCommandSender console = Bukkit.getConsoleSender();
         console.sendMessage(ChatColor.DARK_GREEN + "Lobbysystem erfolgreich geladen!");
@@ -27,6 +29,9 @@ public final class mipa extends JavaPlugin {
 
     @Override
     public void onDisable() {
+
+        ConsoleCommandSender console = Bukkit.getConsoleSender();
+        console.sendMessage(ChatColor.DARK_RED + "Lobbysystem erfolgreich gestoppt!");
     }
 }
 

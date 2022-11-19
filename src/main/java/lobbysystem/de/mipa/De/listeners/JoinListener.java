@@ -33,7 +33,7 @@ public class JoinListener implements Listener {
         player.getInventory().clear();
         player.getInventory().setItem(0,navigator);
         player.sendMessage(ChatColor.DARK_GREEN + "Wilkommen "+
-        player.getScoreboard().getPlayerTeam(player).getPrefix()+ChatColor.DARK_GRAY
+        player.getScoreboard().getPlayerTeam(player).getPrefix()+ ChatColor.DARK_GRAY
         +player.getName()+ChatColor.DARK_GREEN +", auf unserem Server! Schaue auf CityBuild vorbei! ");
 
         event.setJoinMessage("");
